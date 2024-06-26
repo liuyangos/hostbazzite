@@ -29,6 +29,7 @@ jobs:
           arch: x86_64
           image_name: hostbazzite
           image_repo: ${{ steps.registry_case.outputs.lowercase }}
+          image_tag: 40
           variant: "Kinoite"
           version: latest
           iso_name: "hostbazzite.iso"
