@@ -6,10 +6,11 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-iso
   cancel-in-progress: true
 
+name: release-iso
 jobs:
   build_iso:
     runs-on: ubuntu-latest
-    name: Build ISO
+    name: Generate and Release ISOs
     permissions:
       contents: read
       packages: write
