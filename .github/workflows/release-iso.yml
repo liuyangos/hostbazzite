@@ -30,7 +30,7 @@ jobs:
           image_name: hostbazzite
           image_repo: ${{ steps.registry_case.outputs.lowercase }}
           variant: "Kinoite"
-          version: 40
+          version: latest
           iso_name: "hostbazzite.iso"
       - name: Upload ISO
         uses: actions/upload-artifact@v4
