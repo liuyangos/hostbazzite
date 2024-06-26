@@ -1,8 +1,5 @@
 on:
-  push:
-    paths:
-      - 'boot_menu.yml'
-      - '.github/workflows/release-iso.yml'
+  workflow_call:
   workflow_dispatch:
 
 name: release-iso
@@ -10,8 +7,6 @@ jobs:
   release-iso:
     name: Generate and Release ISOs
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     container: 
       image: fedora:40
       options: --privileged
@@ -24,7 +19,6 @@ jobs:
           image-name: ${{ github.event.repository.name }}
           installer-repo: releases
           installer-major-version: 40
-          boot-menu-path: boot_menu.yml
       - name: install github CLI
         run: |
           sudo dnf install 'dnf-command(config-manager)' -y
