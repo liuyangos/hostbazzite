@@ -30,9 +30,9 @@ jobs:
           arch: x86_64
           image_name: hostbazzite
           image_repo: ${{ steps.registry_case.outputs.lowercase }}
-          variant: "Kinoite"
+          variant: "Silverblue"
           version: 40
-          image_tag: host-03
+          image_tag: host-04
           iso_name: "hostbazzite.iso"
       - name: Upload ISO
         uses: actions/upload-artifact@v4
