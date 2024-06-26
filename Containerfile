@@ -53,8 +53,8 @@ COPY build.sh /tmp/build.sh
 COPY system_files/overrides /
 
 RUN mkdir -p /var/lib/alternatives && \
+    ls -l /usr/share/pixmaps && \
     /tmp/build.sh && \
-    ls -l /usr/share/pixmaps\
     ostree container commit
 ## NOTES:
 # - /var/lib/alternatives is required to prevent failure with some RPM installs
