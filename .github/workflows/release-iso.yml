@@ -1,24 +1,31 @@
 on:
-  workflow_call:
   workflow_dispatch:
+  workflow_call:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-iso
+  cancel-in-progress: true
 
 name: release-iso
 jobs:
   release-iso:
     name: Generate and Release ISOs
     runs-on: ubuntu-latest
-    container: 
+    permissions:
+      contents: write
+    container:
       image: fedora:40
       options: --privileged
     steps:
       - uses: actions/checkout@v4
-      - name: Generate ISO  
-        uses: ublue-os/isogenerator@main
+      - name: Generate ISO
+        uses: ublue-os/isogenerator-old@v2.3.1
         id: isogenerator
         with:
           image-name: ${{ github.event.repository.name }}
           installer-repo: releases
           installer-major-version: 40
+          boot-menu-path: boot_menu.yml
       - name: install github CLI
         run: |
           sudo dnf install 'dnf-command(config-manager)' -y
@@ -37,5 +44,4 @@ jobs:
       - name: Upload SHA256SUM
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run:
-          gh release upload auto-iso ${{ steps.isogenerator.outputs.sha256sum-path }} -R ${{ github.repository_owner }}/${{ github.event.repository.name }} --clobber
+        run: gh release upload auto-iso ${{ steps.isogenerator.outputs.sha256sum-path }} -R ${{ github.repository_owner }}/${{ github.event.repository.name }} --clobber
