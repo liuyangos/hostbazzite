@@ -22,5 +22,4 @@ rpm-ostree install screen
 
 systemctl enable podman.socket
 
-sudo dracut --force
 
