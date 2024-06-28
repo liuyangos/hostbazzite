@@ -39,6 +39,8 @@ ARG SOURCE_SUFFIX="-deck"
 ARG SOURCE_TAG="40"
 
 
+ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
+
 ### 2. SOURCE IMAGE
 ## this is a standard Containerfile FROM using the build ARGs above to select the right upstream image
 FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
