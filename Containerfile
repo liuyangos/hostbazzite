@@ -57,10 +57,7 @@ COPY system_files/desktop/shared /
 COPY system_files/shared /
 COPY system_files/deck/shared /
 
-RUN cat /usr/libexec/containerbuild/build-initramfs && \
-    mkdir -p /var/tmp && \
-    chmod 1777 var/tmp && \
-    /usr/libexec/containerbuild/build-initramfs
+RUN /usr/libexec/containerbuild/build-initramfs
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
