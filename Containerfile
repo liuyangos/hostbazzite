@@ -57,7 +57,8 @@ COPY system_files/desktop/shared /
 COPY system_files/shared /
 COPY system_files/deck/shared /
 
-RUN /usr/libexec/containerbuild/build-initramfs
+RUN cat /usr/libexec/containerbuild/build-initramfs && \
+    /usr/libexec/containerbuild/build-initramfs
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
