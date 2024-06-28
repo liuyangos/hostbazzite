@@ -50,10 +50,11 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
 COPY build.sh /tmp/build.sh
 
-COPY system_files/overrides /
+COPY system_files/desktop/shared /
+COPY system_files/shared /
+COPY system_files/deck/shared /
 
 RUN mkdir -p /var/lib/alternatives && \
-    ls -l /usr/share/pixmaps && \
     /tmp/build.sh && \
     ostree container commit
 ## NOTES:
