@@ -38,12 +38,13 @@ ARG SOURCE_SUFFIX="-deck"
 ## SOURCE_TAG arg must be a version built for the specific image: eg, 39, 40, gts, latest
 ARG SOURCE_TAG="40"
 
-
-ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
-
 ### 2. SOURCE IMAGE
 ## this is a standard Containerfile FROM using the build ARGs above to select the right upstream image
 FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
+
+
+
+ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
 
 
 ### 3. MODIFICATIONS
@@ -57,7 +58,6 @@ COPY system_files/shared /
 COPY system_files/deck/shared /
 
 RUN /usr/libexec/containerbuild/build-initramfs  && \
-    /usr/libexec/containerbuild/image-info && \
     mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
     ostree container commit
