@@ -57,8 +57,9 @@ COPY system_files/desktop/shared /
 COPY system_files/shared /
 COPY system_files/deck/shared /
 
-RUN /usr/libexec/containerbuild/build-initramfs  && \
-    mkdir -p /var/lib/alternatives && \
+RUN /usr/libexec/containerbuild/build-initramfs
+
+RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
     ostree container commit
 ## NOTES:
