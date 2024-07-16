@@ -28,7 +28,7 @@ jobs:
         id: build
         with:
           arch: x86_64
-          image_name: ${{ env.REPO_NAME }}
+          image_name: hostbazzite
           image_repo: ${{ steps.registry_case.outputs.lowercase }}
           variant: "Kinoite"
           version: 40
