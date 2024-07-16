@@ -18,7 +18,7 @@ rpm-ostree install screen
 # Install override logo
 rpm-ostree override replace \
     --experimental \
-    --from repo=copr:copr.fedorainfracloud.org:liuyangos:bazzite \
+    --from repo=copr:copr.fedorainfracloud.org:kylegospo:bazzite \
         jupiter-hw-support \
         steamdeck-kde-presets
 
