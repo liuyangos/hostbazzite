@@ -42,10 +42,7 @@ ARG SOURCE_TAG="40"
 ## this is a standard Containerfile FROM using the build ARGs above to select the right upstream image
 FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 
-
-
 ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
-
 
 ### 3. MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
@@ -54,10 +51,9 @@ ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
 COPY build.sh /tmp/build.sh
 COPY system_files/desktop/shared system_files/desktop/kinoite system_files/overrides /
 
-RUN /usr/libexec/containerbuild/build-initramfs
-
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
+    /usr/libexec/containerbuild/build-initramfs&& \
     ostree container commit
 ## NOTES:
 # - /var/lib/alternatives is required to prevent failure with some RPM installs

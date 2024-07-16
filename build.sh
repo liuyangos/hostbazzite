@@ -15,9 +15,12 @@ RELEASE="$(rpm -E %fedora)"
 # this installs a package from fedora repos
 rpm-ostree install screen
 
-echo "=========vjligi test"
-
 ls -l /etc/yum.repos.d/
+cat /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
+echo "=========vjligi========"
+cat /etc/yum.repos.d/_copr_matte-schwartz-sunshine.repo
+
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo && \
 
 # Install override logo
 rpm-ostree install \
