@@ -22,13 +22,16 @@ ls -l /etc/yum.repos.d/
 
 cat /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
 
-rpm-ostree override replace \
-    --experimental \
-    --from repo=copr:copr.fedorainfracloud.org:liuyangos:bazzite \
-        jupiter-hw-support \
-        steamdeck-kde-presets
+sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
 
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
+#rpm-ostree override replace \
+#    --experimental \
+#    --from repo=copr:copr.fedorainfracloud.org:liuyangos:bazzite \
+#        jupiter-hw-support \
+#        steamdeck-kde-presets
+
+rpm-ostree install jupiter-hw-support
+
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
