@@ -4,6 +4,7 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
+curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfracloud.org/coprs/liuyangos/bazzite/repo/fedora-40/kylegospo-bazzite-fedora-40.repo
 
 ### Install packages
 
@@ -15,23 +16,13 @@ RELEASE="$(rpm -E %fedora)"
 # this installs a package from fedora repos
 rpm-ostree install screen
 
-curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfracloud.org/coprs/liuyangos/bazzite/repo/fedora-40/kylegospo-bazzite-fedora-40.repo
-ostree container commit
+rpm-ostree override replace \
+    --experimental \
+    --from repo=copr:copr.fedorainfracloud.org:liuyangos:bazzite \
+        jupiter-hw-support-btrfs \
+        steamdeck-kde-presets
 
-ls -l /etc/yum.repos.d/
-
-cat /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
-
-sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
-
-#rpm-ostree override replace \
-#    --experimental \
-#    --from repo=copr:copr.fedorainfracloud.org:liuyangos:bazzite \
-#        jupiter-hw-support \
-#        steamdeck-kde-presets
-
-rpm-ostree install jupiter-hw-support
-
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
