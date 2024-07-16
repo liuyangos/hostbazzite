@@ -15,17 +15,15 @@ RELEASE="$(rpm -E %fedora)"
 # this installs a package from fedora repos
 rpm-ostree install screen
 
-ls -l /etc/yum.repos.d/
-cat /etc/yum.repos.d/_copr_kylegospo-bazzite.repo
-echo "=========vjligi========"
-cat /etc/yum.repos.d/_copr_matte-schwartz-sunshine.repo
+curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfracloud.org/coprs/liuyangos/bazzite/repo/fedora-40/kylegospo-bazzite-fedora-40.repo
 
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite.repo && \
-
-# Install override logo
-rpm-ostree install \
+rpm-ostree override replace \
+    --experimental \
+    --from repo=copr:copr.fedorainfracloud.org:liuyangos:bazzite \
         jupiter-hw-support \
         steamdeck-kde-presets
+
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
