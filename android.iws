@@ -51,11 +51,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="X:\yang.liu\hostbazzite\system_files\desktop\shared\usr\share\ublue-os\bazzite" />
-      <recent name="X:\yang.liu\hostbazzite\system_files\deck\shared\usr\lib\systemd\system" />
-      <recent name="X:\yang.liu\hostbazzite\system_files\overrides\plymouth\themes\spinner" />
-      <recent name="X:\yang.liu\rk3126c\android\device" />
-      <recent name="X:\yang.liu\rk3126c\android\device\rockchip\rk3126c" />
+      <recent name="X:\yang.liu\hostbazzite\system_files\overrides\usr\share\icons\hicolor\scalable\places" />
+      <recent name="X:\yang.liu\hostbazzite\system_files\overrides\usr\share\pixmaps" />
+      <recent name="X:\yang.liu\hostbazzite\system_files\overrides\usr\etc" />
+      <recent name="X:\yang.liu\hostbazzite\system_files\desktop\kinoite\usr\share\wallpapers" />
+      <recent name="X:\yang.liu\hostbazzite\system_files\desktop\shared\usr\share\plymouth\themes\spinner" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\yang.liu\hostbazzite\spec_files\jupiter-hw-support" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
