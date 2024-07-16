@@ -52,10 +52,7 @@ ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 COPY build.sh /tmp/build.sh
-
-COPY system_files/desktop/shared /
-COPY system_files/shared /
-COPY system_files/deck/shared /
+COPY system_files/desktop/shared system_files/desktop/kinoite system_files/overrides /
 
 RUN /usr/libexec/containerbuild/build-initramfs
 

@@ -15,11 +15,16 @@ RELEASE="$(rpm -E %fedora)"
 # this installs a package from fedora repos
 rpm-ostree install screen
 
+# Install override logo
+rpm-ostree override replace \
+    --experimental \
+    --from repo=copr:copr.fedorainfracloud.org:liuyangos:bazzite \
+        jupiter-hw-support \
+        steamdeck-kde-presets
+
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-
-
