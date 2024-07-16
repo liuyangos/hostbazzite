@@ -15,10 +15,12 @@ RELEASE="$(rpm -E %fedora)"
 # this installs a package from fedora repos
 rpm-ostree install screen
 
+echo "=========vjligi test"
+
+ls -l /etc/yum.repos.d/
+
 # Install override logo
-rpm-ostree override replace \
-    --experimental \
-    --from repo=copr:copr.fedorainfracloud.org:kylegospo:bazzite \
+rpm-ostree install \
         jupiter-hw-support \
         steamdeck-kde-presets
 
