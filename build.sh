@@ -16,6 +16,11 @@ RELEASE="$(rpm -E %fedora)"
 rpm-ostree install screen
 
 curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfracloud.org/coprs/liuyangos/bazzite/repo/fedora-40/kylegospo-bazzite-fedora-40.repo
+ostree container commit
+
+ls -l /etc/yum.repos.d/
+
+cat /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
 
 rpm-ostree override replace \
     --experimental \
