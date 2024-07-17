@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=GryMax Portal
+Comment=First-run utility for configuring helpful additions
+Icon=/usr/share/ublue-os/bazzite/logo.svg
+Categories=Utility;
+Exec=/usr/bin/yafti --force

@@ -53,7 +53,7 @@ COPY system_files/desktop/shared system_files/desktop/kinoite system_files/overr
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
-    /usr/libexec/containerbuild/build-initramfs&& \
+    /usr/libexec/containerbuild/build-initramfs && \
     ostree container commit
 ## NOTES:
 # - /var/lib/alternatives is required to prevent failure with some RPM installs

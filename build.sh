@@ -24,7 +24,11 @@ rpm-ostree install screen
 #ujust fix-steam-download-speed
 #ujust install-steamcmd
 
-#dnf copr enable liuyangos/bazzite
+cp "/usr/share/ublue-os/firstboot/yafti.yml" "/etc/yafti.yml"
+cp "/usr/share/ublue-os/firstboot/yafti.yml" "/usr/etc/yafti.yml"
+rm "/usr/share/applications/Documentation.desktop"
+
+sed -i 's|^HOME_URL=.*|HOME_URL="https://hos4.com"|' /usr/lib/os-release && \
 
 rpm-ostree override replace \
     --experimental \
@@ -33,12 +37,6 @@ rpm-ostree override replace \
         steamdeck-kde-presets
 
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
-
-ls -l /usr/share/plymouth/themes/steamos/bazzite.png
-md5sum /usr/share/plymouth/themes/steamos/bazzite.png
-
-md5sum usr/share/plasma/look-and-feel/com.valve.vgui.desktop/contents/splash/images/bazzite_logo.svgz
-md5sum usr/share/plasma/look-and-feel/com.valve.vapor.desktop/contents/splash/images/bazzite_logo.svgz
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
