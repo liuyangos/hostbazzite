@@ -24,6 +24,8 @@ rpm-ostree install screen
 #ujust fix-steam-download-speed
 #ujust install-steamcmd
 
+dnf copr enable liuyangos/bazzite
+
 rpm-ostree override replace \
     --experimental \
     --from repo=copr:copr.fedorainfracloud.org:liuyangos:bazzite \
