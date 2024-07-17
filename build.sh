@@ -16,6 +16,14 @@ curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfrac
 # this installs a package from fedora repos
 rpm-ostree install screen
 
+sudo -A ujust add-user-to-input-group
+sudo -A ujust enable-deck-bios-firmware-updates
+sudo -A ujust setup-decky install
+sudo -A ujust configure-grub hide
+ujust install-gamemode-video
+ujust fix-steam-download-speed
+ujust install-steamcmd
+
 rpm-ostree override replace \
     --experimental \
     --from repo=copr:copr.fedorainfracloud.org:liuyangos:bazzite \
