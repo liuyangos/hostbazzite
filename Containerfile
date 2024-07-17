@@ -50,6 +50,7 @@ ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
 
 COPY build.sh /tmp/build.sh
 COPY system_files/desktop/shared system_files/desktop/kinoite system_files/overrides /
+COPY system_files/deck/kinoite /
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
