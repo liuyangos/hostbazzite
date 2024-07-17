@@ -37,7 +37,8 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
 ls -l /usr/share/plymouth/themes/steamos/bazzite.png
 md5sum /usr/share/plymouth/themes/steamos/bazzite.png
 
-find -name bazzite_logo.svgz
+md5sum usr/share/plasma/look-and-feel/com.valve.vgui.desktop/contents/splash/images/bazzite_logo.svgz
+md5sum usr/share/plasma/look-and-feel/com.valve.vapor.desktop/contents/splash/images/bazzite_logo.svgz
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
