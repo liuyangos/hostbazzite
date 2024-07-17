@@ -16,13 +16,13 @@ curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfrac
 # this installs a package from fedora repos
 rpm-ostree install screen
 
-sudo -A ujust add-user-to-input-group
-sudo -A ujust enable-deck-bios-firmware-updates
-sudo -A ujust setup-decky install
-sudo -A ujust configure-grub hide
-ujust install-gamemode-video
-ujust fix-steam-download-speed
-ujust install-steamcmd
+#sudo -A ujust add-user-to-input-group
+#sudo -A ujust enable-deck-bios-firmware-updates
+#sudo -A ujust setup-decky install
+#sudo -A ujust configure-grub hide
+#ujust install-gamemode-video
+#ujust fix-steam-download-speed
+#ujust install-steamcmd
 
 rpm-ostree override replace \
     --experimental \
@@ -31,6 +31,9 @@ rpm-ostree override replace \
         steamdeck-kde-presets
 
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
+
+ls -l /usr/share/plymouth/themes/steamos/bazzite.png
+md5sum /usr/share/plymouth/themes/steamos/bazzite.png
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
