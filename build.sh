@@ -24,6 +24,11 @@ rpm-ostree install screen
 #ujust fix-steam-download-speed
 #ujust install-steamcmd
 
+ujust setup-decky install
+ujust setup-decky simpledeckytdp
+ujust setup-decky hhd-decky
+ujust install-legion-go-theme
+
 cp "/usr/share/ublue-os/firstboot/yafti.yml" "/etc/yafti.yml"
 cp "/usr/share/ublue-os/firstboot/yafti.yml" "/usr/etc/yafti.yml"
 rm "/usr/share/applications/Documentation.desktop"
