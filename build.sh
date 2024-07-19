@@ -19,6 +19,7 @@ curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfrac
 #cp "/usr/share/ublue-os/firstboot/yafti.yml" "/etc/yafti.yml"
 cp "/usr/share/ublue-os/firstboot/yafti.yml" "/usr/etc/yafti.yml"
 rm "/usr/share/applications/Documentation.desktop"
+rm "/usr/etc/xdg/autostart/steam.desktop"
 
 #sed -i 's|^HOME_URL=.*|HOME_URL="https://hos4.com"|' /usr/lib/os-release && \
 
@@ -29,13 +30,6 @@ rpm-ostree override replace \
         steamdeck-kde-presets
 
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
-
-
-echo '============='
-pwd
-find -name steam.desktop 2>/dev/null
-pwd
-echo '============='
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
