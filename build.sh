@@ -30,6 +30,13 @@ rpm-ostree override replace \
 
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
 
+
+echo '============='
+pwd
+find -name steam.desktop
+pwd
+echo '============='
+
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
