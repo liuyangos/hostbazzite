@@ -31,6 +31,14 @@ rpm-ostree override replace \
 
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
 
+#sudo -A ujust add-user-to-input-group
+#sudo -A ujust enable-deck-bios-firmware-updates
+#sudo -A ujust setup-decky install
+#sudo -A ujust configure-grub hide
+#ujust install-gamemode-video
+#ujust fix-steam-download-speed
+#ujust install-steamcmd
+
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 

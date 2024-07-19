@@ -1,0 +1,17 @@
+NAME="GryMax"
+VERSION="40.20240717.0 (Kinoite)"
+ID=grymax
+ID_LIKE="rhel centos fedora"
+VERSION_ID=40
+VERSION_CODENAME=""
+PLATFORM_ID="platform:f40"
+PRETTY_NAME="GryMax 40.20240717.0 (From Fedora Kinoite)"
+ANSI_COLOR="0;38;2;138;43;226"
+LOGO=bazzite-logo-icon
+DEFAULT_HOSTNAME="grymax"
+SUPPORT_END=2025-05-13
+VARIANT="Kinoite"
+VARIANT_ID=kinoite
+OSTREE_VERSION='40.20240717.0'
+VERSION_CODENAME="Holographic"
+BUILD_ID="ef06e73"
