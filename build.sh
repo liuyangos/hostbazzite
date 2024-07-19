@@ -33,7 +33,7 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
 
 echo '============='
 pwd
-find -name steam.desktop
+find -name steam.desktop 2>/dev/null
 pwd
 echo '============='
 
