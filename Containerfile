@@ -57,9 +57,6 @@ RUN mkdir -p /var/lib/alternatives && \
     /usr/libexec/containerbuild/build-initramfs && \
     ostree container commit
 
-RUN echo "===========vjligi" && \
-    cat /etc/xdg/kcm-about-distrorc
-
 ## NOTES:
 # - /var/lib/alternatives is required to prevent failure with some RPM installs
 # - All RUN commands must end with ostree container commit

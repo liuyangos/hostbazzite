@@ -14,26 +14,13 @@ curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfrac
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-rpm-ostree install screen
-
-#sudo -A ujust add-user-to-input-group
-#sudo -A ujust enable-deck-bios-firmware-updates
-#sudo -A ujust setup-decky install
-#sudo -A ujust configure-grub hide
-#ujust install-gamemode-video
-#ujust fix-steam-download-speed
-#ujust install-steamcmd
-
-ujust setup-decky install
-#ujust setup-decky simpledeckytdp
-#ujust setup-decky hhd-decky
-#ujust install-legion-go-theme
+#rpm-ostree install screen
 
 #cp "/usr/share/ublue-os/firstboot/yafti.yml" "/etc/yafti.yml"
 cp "/usr/share/ublue-os/firstboot/yafti.yml" "/usr/etc/yafti.yml"
 rm "/usr/share/applications/Documentation.desktop"
 
-sed -i 's|^HOME_URL=.*|HOME_URL="https://hos4.com"|' /usr/lib/os-release && \
+#sed -i 's|^HOME_URL=.*|HOME_URL="https://hos4.com"|' /usr/lib/os-release && \
 
 rpm-ostree override replace \
     --experimental \
