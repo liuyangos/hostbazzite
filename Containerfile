@@ -36,7 +36,7 @@ ARG SOURCE_IMAGE="bazzite"
 ARG SOURCE_SUFFIX="-deck"
 
 ## SOURCE_TAG arg must be a version built for the specific image: eg, 39, 40, gts, latest
-ARG SOURCE_TAG="40-20240707"
+ARG SOURCE_TAG="40-20240630"
 
 ### 2. SOURCE IMAGE
 ## this is a standard Containerfile FROM using the build ARGs above to select the right upstream image
