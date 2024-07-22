@@ -18,11 +18,11 @@ curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfrac
 
 #cp "/usr/share/ublue-os/firstboot/yafti.yml" "/etc/yafti.yml"
 cp "/usr/share/ublue-os/firstboot/yafti.yml" "/usr/etc/yafti.yml"
-rm "/usr/share/applications/Documentation.desktop"
-rm "/usr/etc/xdg/autostart/steam.desktop"
+rm "/usr/share/applications/bazzite-documentation.desktop"
 rm "/usr/bin/bazzite-steam"
 rm "/usr/share/ublue-os/bazzite/bazzite-suspend.webm"
 #cp "/usr/lib/os-release" "/usr/etc/os-release"
+#rm "/usr/etc/xdg/autostart/steam.desktop"
 
 #sed -i 's|^HOME_URL=.*|HOME_URL="https://hos4.com"|' /usr/lib/os-release && \
 
