@@ -16,13 +16,13 @@ curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfrac
 # this installs a package from fedora repos
 #rpm-ostree install screen
 
-#cp "/usr/share/ublue-os/firstboot/yafti.yml" "/etc/yafti.yml"
 cp "/usr/share/ublue-os/firstboot/yafti.yml" "/usr/etc/yafti.yml"
-rm "/usr/share/applications/bazzite-documentation.desktop"
-rm "/usr/bin/bazzite-steam"
 rm "/usr/share/ublue-os/bazzite/bazzite-suspend.webm"
-#cp "/usr/lib/os-release" "/usr/etc/os-release"
-#rm "/usr/etc/xdg/autostart/steam.desktop"
+rm -f "/usr/share/applications/Documentation.desktop" "/usr/share/applications/bazzite-documentation.desktop"
+#rm "/usr/bin/bazzite-steam"
+rm "/usr/etc/xdg/autostart/steam.desktop"
+rm "/usr/lib/systemd/system/return-to-gamemode.service"
+rm "/usr/bin/return-to-gamemode"
 
 #sed -i 's|^HOME_URL=.*|HOME_URL="https://hos4.com"|' /usr/lib/os-release && \
 
