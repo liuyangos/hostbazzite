@@ -8,7 +8,6 @@ Summary:        Configurator interface for Handheld Daemon.
 License:        GPL-3.0-or-later
 URL:            https://github.com/hhd-dev/hhd-ui
 Source0:        %{URL}/archive/v%{version}.tar.gz
-Source2:        bazzite.svg
 
 BuildArch:      x86_64
 
@@ -36,9 +35,6 @@ chmod +x dist/hhd-ui.AppImage
 %install
 mkdir -p %{buildroot}%{_bindir}
 cp -a electron/dist/hhd-ui.AppImage %{buildroot}%{_bindir}/hhd-ui
-
-find -name bazzite.svg
-
 install -Dm644 LICENSE %{buildroot}%{_licensedir}/%{name}/LICENSE
 install -Dm644 pkg/hhd-ui.desktop %{buildroot}%{_datadir}/applications/hhd-ui.desktop
 
