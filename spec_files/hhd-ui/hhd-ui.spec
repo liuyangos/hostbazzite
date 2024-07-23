@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 
 Name:           hhd-ui
-Version:        3.1.34
+Version:        3.1.2
 Release:        1%{?dist}
 Summary:        Configurator interface for Handheld Daemon.
 License:        GPL-3.0-or-later
@@ -36,7 +36,7 @@ cd electron
 npm ci
 npm run build
 chmod +x dist/hhd-ui.AppImage
-echo "vjligi0"
+echo "vjligi1"
 ls -l %{buildroot}%{_bindir}
 ls -l %{buildroot}%{_datadir}
 find -name bazzite.svg
@@ -56,6 +56,7 @@ install -Dm644 art/library_hero.png %{buildroot}%{_datadir}/applications/hhd-ui/
 install -Dm644 art/library_logo.png %{buildroot}%{_datadir}/applications/hhd-ui/library_logo.png
 install -Dm644 art/main_capsule.png %{buildroot}%{_datadir}/applications/hhd-ui/main_capsule.png
 install -Dm644 art/icon.png %{buildroot}%{_datadir}/applications/hhd-ui/icon.png
+find -name main_capsule.png
 
 %post
 
