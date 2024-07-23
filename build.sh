@@ -46,9 +46,6 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
 #ujust setup-decky install
 #ujust setup-decky simpledeckytdp
 
-curl -L https://github.com/aarron-lee/SimpleDeckyTDP/raw/main/install.sh | sh
-curl -L https://github.com/hhd-dev/hhd-decky/raw/main/install.sh | bash
-
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
