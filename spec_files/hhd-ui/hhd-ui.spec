@@ -22,9 +22,6 @@ Configurator interface for Handheld Daemon.
 %prep
 %setup -q -n %{name}-%{version}
 echo "vjligi0"
-ls -l %{buildroot}%{_bindir}
-ls -l %{buildroot}%{_datadir}
-find -name bazzite.svg
 
 
 %build
@@ -37,18 +34,13 @@ npm ci
 npm run build
 chmod +x dist/hhd-ui.AppImage
 echo "vjligi1"
-ls -l %{buildroot}%{_bindir}
-ls -l %{buildroot}%{_datadir}
-find -name bazzite.svg
+
 
 %install
 mkdir -p %{buildroot}%{_bindir}
 cp -a electron/dist/hhd-ui.AppImage %{buildroot}%{_bindir}/hhd-ui
 install -Dm644 LICENSE %{buildroot}%{_licensedir}/%{name}/LICENSE
 install -Dm644 pkg/hhd-ui.desktop %{buildroot}%{_datadir}/applications/hhd-ui.desktop
-ls -l %{buildroot}%{_bindir}
-ls -l %{buildroot}%{_datadir}
-find -name bazzite.svg
 
 mkdir -p %{buildroot}%{_datadir}/applications/hhd-ui/
 install -Dm644 art/library_capsule.png %{buildroot}%{_datadir}/applications/hhd-ui/library_capsule.png
@@ -56,7 +48,7 @@ install -Dm644 art/library_hero.png %{buildroot}%{_datadir}/applications/hhd-ui/
 install -Dm644 art/library_logo.png %{buildroot}%{_datadir}/applications/hhd-ui/library_logo.png
 install -Dm644 art/main_capsule.png %{buildroot}%{_datadir}/applications/hhd-ui/main_capsule.png
 install -Dm644 art/icon.png %{buildroot}%{_datadir}/applications/hhd-ui/icon.png
-find -name main_capsule.png
+
 
 %post
 
