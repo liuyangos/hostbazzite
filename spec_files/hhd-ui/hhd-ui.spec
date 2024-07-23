@@ -37,6 +37,9 @@ mkdir -p %{buildroot}%{_bindir}
 cp -a electron/dist/hhd-ui.AppImage %{buildroot}%{_bindir}/hhd-ui
 install -Dm644 LICENSE %{buildroot}%{_licensedir}/%{name}/LICENSE
 install -Dm644 pkg/hhd-ui.desktop %{buildroot}%{_datadir}/applications/hhd-ui.desktop
+ls -l %{buildroot}%{_bindir}
+ls -l %{buildroot}%{_datadir}
+find -name bazzite.svg
 
 mkdir -p %{buildroot}%{_datadir}/applications/hhd-ui/
 install -Dm644 art/library_capsule.png %{buildroot}%{_datadir}/applications/hhd-ui/library_capsule.png
