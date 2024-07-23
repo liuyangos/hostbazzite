@@ -42,6 +42,10 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
 #ujust fix-steam-download-speed
 #ujust install-steamcmd
 
+
+ujust setup-decky install
+ujust setup-decky simpledeckytdp
+
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
