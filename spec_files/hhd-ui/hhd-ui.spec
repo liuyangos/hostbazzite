@@ -21,8 +21,6 @@ Configurator interface for Handheld Daemon.
 
 %prep
 %setup -q -n %{name}-%{version}
-echo "vjligi0"
-
 
 %build
 VERSION=$(cat package.json | grep -E '"version": "[0-9\.]+"' -o | grep -E "[0-9\.]+" -o)
@@ -33,8 +31,6 @@ cd electron
 npm ci
 npm run build
 chmod +x dist/hhd-ui.AppImage
-echo "vjligi1"
-
 
 %install
 mkdir -p %{buildroot}%{_bindir}
@@ -48,7 +44,6 @@ install -Dm644 art/library_hero.png %{buildroot}%{_datadir}/applications/hhd-ui/
 install -Dm644 art/library_logo.png %{buildroot}%{_datadir}/applications/hhd-ui/library_logo.png
 install -Dm644 art/main_capsule.png %{buildroot}%{_datadir}/applications/hhd-ui/main_capsule.png
 install -Dm644 art/icon.png %{buildroot}%{_datadir}/applications/hhd-ui/icon.png
-
 
 %post
 
