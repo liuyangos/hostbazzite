@@ -14,7 +14,9 @@ curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfrac
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-rpm-ostree install screen
+rpm-ostree install screen firefox firefox-langpacks
+
+rpm-ostree override remove hhd hhd-ui
 
 cp "/usr/share/ublue-os/firstboot/yafti.yml" "/usr/etc/yafti.yml"
 rm "/usr/share/ublue-os/bazzite/bazzite-suspend.webm"
