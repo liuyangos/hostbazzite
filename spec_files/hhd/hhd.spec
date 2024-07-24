@@ -1,5 +1,5 @@
 Name:           hhd
-Version:        3.1.1
+Version:        3.2.2
 Release:        1%{?dist}
 Summary:        Handheld Daemon, a tool for configuring handheld devices.
 
