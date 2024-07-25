@@ -22,7 +22,6 @@ Configurator interface for Handheld Daemon.
 
 %prep
 %setup -q -n %{name}-%{version}
-cp %{SOURCE2} %{name}-%{version}/src/assets/distro/bazzite.svg
 
 %build
 VERSION=$(cat package.json | grep -E '"version": "[0-9\.]+"' -o | grep -E "[0-9\.]+" -o)
@@ -35,6 +34,7 @@ npm run build
 chmod +x dist/hhd-ui.AppImage
 
 %install
+cp %{SOURCE2} %{name}-%{version}/src/assets/distro/bazzite.svg
 mkdir -p %{buildroot}%{_bindir}
 cp -a electron/dist/hhd-ui.AppImage %{buildroot}%{_bindir}/hhd-ui
 install -Dm644 LICENSE %{buildroot}%{_licensedir}/%{name}/LICENSE
