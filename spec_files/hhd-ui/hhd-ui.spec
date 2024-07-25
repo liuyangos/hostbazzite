@@ -22,11 +22,7 @@ Configurator interface for Handheld Daemon.
 
 %prep
 %setup -q -n %{name}-%{version}
-env
-printenv
-ls -l %{SOURCE2}
-find -name bazzite.svg
-cp %{SOURCE2} %{builddir}/%{name}-%{version}/src/assets/distro/bazzite.svg
+cp %{SOURCE2} src/assets/distro/bazzite.svg
 
 %build
 VERSION=$(cat package.json | grep -E '"version": "[0-9\.]+"' -o | grep -E "[0-9\.]+" -o)
