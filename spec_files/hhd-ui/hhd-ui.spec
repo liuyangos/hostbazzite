@@ -22,6 +22,10 @@ Configurator interface for Handheld Daemon.
 
 %prep
 %setup -q -n %{name}-%{version}
+env
+printenv
+ls -l %{SOURCE2}
+find -name bazzite.svg
 cp %{SOURCE2} %{builddir}/%{name}-%{version}/src/assets/distro/bazzite.svg
 
 %build
