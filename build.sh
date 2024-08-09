@@ -16,7 +16,7 @@ curl -Lo /etc/yum.repos.d/_copr_liuyangos-bazzite.repo https://copr.fedorainfrac
 # this installs a package from fedora repos
 rpm-ostree install screen firefox firefox-langpacks
 
-rpm-ostree override remove hhd hhd-ui
+#rpm-ostree override remove hhd hhd-ui
 
 cp "/usr/share/ublue-os/firstboot/yafti.yml" "/usr/etc/yafti.yml"
 rm "/usr/share/ublue-os/bazzite/bazzite-suspend.webm"
@@ -32,7 +32,9 @@ rpm-ostree override replace \
     --experimental \
     --from repo=copr:copr.fedorainfracloud.org:liuyangos:bazzite \
         jupiter-hw-support-btrfs \
-        steamdeck-kde-presets
+        steamdeck-kde-presets \
+        hhd \
+        hhd-ui
 
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_liuyangos-bazzite.repo
 
